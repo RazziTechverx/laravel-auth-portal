@@ -1,0 +1,40 @@
+body{
+    font-family: "HindSiliguri-Regular";
+    font-size: 18px;
+}
+h1{
+    font-size: 42px;
+}
+h2{
+    font-size: 36px;
+}
+h3{
+    font-size: 28px;
+}
+h4{
+    font-size: 24px;
+}
+h5{
+    font-size: 20px;
+}
+h6{
+    font-size: 18px;
+}
+h1,
+h2{
+    font-family: "HindSiliguri-Bold";
+}
+h3,
+h4,
+h5,
+h6{
+    font-family: "HindSiliguri-SemiBold";
+}
+@media (min-width: 1700px){
+    .container{
+        max-width: 1630px;
+    }
+}
+section:not(.banner-section){
+    padding: 50px 0;
+}

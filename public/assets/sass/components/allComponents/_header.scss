@@ -1,0 +1,180 @@
+header{
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 999;
+    .header-inner{
+        .icc-btn{
+            padding: 9px 16px;
+            border-radius: 30px;
+            font-size: unset;
+            font-weight: normal;
+        }
+        .header-top{
+            display: flex;
+            flex-wrap: wrap;
+            padding: 16px;
+            @include bg-cover-center();
+            @include transition(.2s);
+            .header-left,
+            .header-right{
+                width: 220px;
+            }
+            .header-center{
+                width: calc(100% - 440px);
+                text-align: center;
+                .logo-box{
+                    display: inline-block;
+                    .logo{
+                        max-width: 280px;
+                        max-height: 70px;
+                    }
+                }
+            }
+        }
+        .header-bottom{
+            background-color: rgba(225, 225, 225, .9);
+            @include transition(.5s);
+            nav{
+                > ul{
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: center;
+                    align-items: center;
+                    border-bottom: 1px solid $white-color;
+                    > li{
+                        display: inline-block;
+                        margin-right: 20px;
+                        margin-top: 20px;
+                        margin-bottom: 16px;
+                        position: relative;
+                        &:last-child{
+                            margin-right: 0;
+                            > a{
+                                padding-right: 0;
+                            }
+                        }
+                        > a{
+                            display: block;
+                            color: $primary-color;
+                            font-family: "Rajdhani-SemiBold";
+                            text-decoration: none;
+                            padding-right: 40px;
+                            font-size: 20px;
+                            text-decoration: none;
+                            position: relative;
+                        }
+                        > ul{
+                            position: absolute;
+                            top: 47px;
+                            left: -20px;
+                            width: 300px;
+                            background-color: $white-color;
+                            visibility: hidden;
+                            opacity: 0;
+                            box-shadow: 0px 6px 15px 0px rgba(0, 0, 0,0.1);
+                            @include transition(.3s);
+                            li{
+                                a{
+                                    font-family: "Rajdhani-SemiBold";
+                                    padding: 12px;
+                                    display: block;
+                                    text-decoration: none;
+                                    border-bottom: 1px solid $primary-color;
+                                    color: $primary-color;    
+                                    &:hover{
+                                        background-color: $primary-color;
+                                        color: $white-color;
+                                    }
+                                }
+                                &:last-child{
+                                    a{
+                                        border-bottom: 0;
+                                    }
+                                }
+                            }
+                        }
+                        &:hover{
+                            > ul{
+                                left: 0;
+                                visibility: visible;
+                                opacity: 1;
+                            }
+                        }
+                    }
+                }
+            }
+            nav ul li{
+                position: relative;
+            }
+            nav > ul > li.has-dropdown{
+                &:before{
+                    content: "";
+                    width: 20px;
+                    height: 10px;
+                    border-bottom: 10px solid $white-color;
+                    border-left: 10px solid $transparent-color;
+                    border-right: 10px solid $transparent-color;
+                    position: absolute;
+                    bottom: -17px;
+                    opacity: 0;
+                    visibility: hidden;
+                    left: calc(50% - 40px);
+                    @include transition(.3s);
+                }
+                > a{
+                    position: relative;
+                    &:before{
+                        content: "\f107";
+                        font-family: 'FontAwesome';
+                        color: $primary-color;
+                        position: absolute;
+                        top: 8px;
+                        right: 0;
+                        font-size: 32px;
+                        line-height: 12px;
+                        @include transition(.5s);
+                    }
+                }
+                &:hover{
+                    &:before{
+                        opacity: 1;
+                        visibility: visible;
+                        left: calc(50% - 20px);
+                    }
+                }
+            }
+        } 
+    }
+}
+header .header-inner .header-bottom.transparent-before-scroll{
+    background-color: rgba(225, 225, 225, 0);
+}
+header .header-inner .header-bottom.transparent-before-scroll nav > ul > li > a{
+    color: $white-color;
+}
+header .header-inner .header-bottom.transparent-before-scroll nav > ul > li.has-dropdown > a:before{
+    color: $white-color;
+}
+body.scrolled{
+    .header-top{
+        padding: 12px 16px;
+    }
+    .header-bottom,
+    .header-bottom.transparent-before-scroll{
+        background-color: rgba(225, 225, 225, .9);
+        nav{
+            > ul{
+                > li{
+                    > a{
+                        color: $primary-color;
+                        &:before{
+                            color: $primary-color !important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

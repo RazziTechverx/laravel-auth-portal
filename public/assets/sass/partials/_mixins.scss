@@ -1,0 +1,9 @@
+@mixin bg-cover-center{
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+@mixin transition($val){
+    transition: $val;
+}

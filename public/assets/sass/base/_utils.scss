@@ -1,0 +1,51 @@
+// BACKGROUND COLORS/STYLES
+.bg-cover-center{
+    @include bg-cover-center();
+}
+
+// COLORS
+.primary-color{
+    color: $primary-color;
+}
+.white-color{
+    color: $white-color;
+}
+
+// STYLES
+.ml-1{
+    margin-left: .25rem;
+}
+.mr-1{
+    margin-right: .25rem;
+}
+.ml-2{
+    margin-left: .5rem;
+}
+.mr-2{
+    margin-right: .5rem;
+}
+.ml-3{
+    margin-left: 1rem;
+}
+.mr-3{
+    margin-right: 1rem;
+}
+.ml-4{
+    margin-left: 1.5rem;
+}
+.mr-4{
+    margin-right: 1.5rem;
+}
+.mb-6{
+    margin-bottom: 64px;
+}
+.w-fit-content{
+    width: fit-content;
+}
+.container-medium{
+    max-width: 1080px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+}

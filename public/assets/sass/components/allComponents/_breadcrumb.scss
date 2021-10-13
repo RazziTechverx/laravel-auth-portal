@@ -1,0 +1,23 @@
+.icc-breadcrumb{
+    font-family: "Rajdhani-SemiBold";
+    font-size: 20px;
+    border-bottom: 1px solid $primary-color;
+    li{
+        color: $primary-color;
+        a{
+            font-weight: bold;
+            text-decoration: none;
+            color: $primary-color;
+        }
+    }
+    
+    .breadcrumb-item+.breadcrumb-item{
+        padding-left: 1.25rem;
+        &:before{
+            content: "\f105";
+            font-family: 'FontAwesome';
+            font-weight: bold;
+            padding-right: 1.25rem;
+        }
+    }
+}

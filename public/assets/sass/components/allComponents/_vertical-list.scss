@@ -1,0 +1,13 @@
+.vertical-list{
+    ul{
+        li {
+            margin-bottom: 12px;
+            a{
+                text-decoration: none;
+            }
+            &:last-child{
+                margin-bottom: 0;
+            }
+        }
+    }
+}

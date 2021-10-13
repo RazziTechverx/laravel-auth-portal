@@ -1,0 +1,117 @@
+@import "./assets/sass/base/fonts";
+@import "./assets/sass/partials/variables";
+@import "./assets/sass/partials/mixins";
+@import "./assets/sass/base/utils";
+@import "./assets/sass/base/globals";
+@import "./assets/sass/partials/breakpoints";
+@import "./assets/sass/base/reset";
+@import "./assets/sass/components/all-components";
+
+// STYLES
+main{
+    min-height: calc(100vh - 564px);
+}
+.banner-section{
+    .banner-section-inner{
+        @include bg-cover-center();
+        .banner-layer{
+            background-image: linear-gradient(#00175FD1, #224154B5, #232323B3);
+            min-height: 100vh;
+            .container-medium{
+                padding-top: 210px;
+                padding-bottom: 100px;
+                min-height: 100vh;
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                color: $white-color;
+                .banner-title{
+                    font-size: 96px;
+                    margin-bottom: 30px;
+                    @include transition(1s);
+                }
+                .banner-description{
+                    font-size: 36px;
+                    @include transition(1s);
+                    p:last-child{
+                        margin-bottom: 0;
+                    }
+                }
+            }
+        }
+    }
+
+    &.home-banner-slider{
+        .banner-title,
+        .banner-description{
+            opacity: 0;
+        }
+        .banner-title{
+            transform: translateY(-50px);
+        }
+        .banner-description{
+            transform: translateY(-50px);
+        }
+    }
+    .banner-section-inner.slick-current{
+        .banner-title,
+        .banner-description{
+            transform: translateY(0px) !important;
+            opacity: 1 !important;
+        }
+    }
+}
+.home-banner-slider.slick-slider{
+    margin-bottom: 0;
+    ul.slick-dots {
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 50px;
+        li{
+            margin: 0px 8px;
+            button{
+                width: 23px;
+                height: 23px;
+                background-image: url(./assets/images/ball-white.png);
+                background-size: 100%;
+                &:before{
+                    width: 24px;
+                    height: 24px;
+                    top: calc(50% + 2px);
+                    left: calc(50% + 2px);
+                    transform: scale(0) translate(-50%, -50%);
+                    background-image: url(./assets/images/ball-blue.png);
+                    background-size: 100%;
+                    @include transition(.3s);
+                }
+
+            }
+            &.slick-active{
+                button{
+                    &:before{
+                        transform: scale(1) translate(-50%, -50%);
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.contact-info-box{
+    display: flex;
+    flex-wrap: wrap;
+    .inner1{
+        width: 35px;
+    }
+    .inner2{
+        width: calc(100% - 35px);
+        padding-left: 16px;
+    }
+}
+
+.inner-page-content-box{
+    padding: 169px 0 70px;
+}

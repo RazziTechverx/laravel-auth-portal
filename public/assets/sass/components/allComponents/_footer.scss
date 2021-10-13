@@ -1,0 +1,15 @@
+footer{
+    .footer-inner{
+        color: $white-color;
+        @include bg-cover-center();
+        .footer-top{
+            padding: 50px 0;
+            .widget-title {
+                margin-bottom: 24px;
+            }
+        }
+        a{
+            color: $white-color;
+        }
+    }
+}
