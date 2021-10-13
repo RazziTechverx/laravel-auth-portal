@@ -28,7 +28,7 @@ Install all the dependencies using composer
 
 Start the local development server
 
-    php artisan serve
+    php artisan serve --port 8003
 
 You can now access the server at http://127.0.0.1:8000
 
