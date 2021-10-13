@@ -30,6 +30,6 @@ Start the local development server
 
     php artisan serve --port 8003
 
-You can now access the server at http://127.0.0.1:8000
+You can now access the server at http://127.0.0.1:8003
 
 Note: No need for database connectivity/migrations as this is front-end application
